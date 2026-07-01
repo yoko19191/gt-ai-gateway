@@ -1,0 +1,30 @@
+[package]
+name = "ai-gateway"
+version = "1.7.3"
+description = "AI Gateway Desktop App"
+authors = []
+edition = "2021"
+
+[lib]
+name = "ai_gateway_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[[bin]]
+name = "ai-gateway"
+path = "src/main.rs"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon", "image-png"] }
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+tauri-plugin-shell = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+open = "5"
+uuid = { version = "1", features = ["v4"] }

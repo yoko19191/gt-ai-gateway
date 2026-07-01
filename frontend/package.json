@@ -1,0 +1,52 @@
+{
+  "name": "frontend",
+  "private": true,
+  "version": "1.7.3",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build:viewer": "node scripts/build-viewer.mjs",
+    "build": "npm run build:viewer && vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "build:tauri": "npm run build:viewer && vite build --mode tauri"
+  },
+  "dependencies": {
+    "@microsoft/fetch-event-source": "^2.0.1",
+    "@tauri-apps/api": "^2.11.0",
+    "@tauri-apps/plugin-dialog": "^2.7.1",
+    "@tauri-apps/plugin-fs": "^2.5.1",
+    "@tauri-apps/plugin-shell": "~2.0.0",
+    "@vueuse/core": "^14.2.1",
+    "ant-design-vue": "^4.2.6",
+    "axios": "^1.13.6",
+    "dayjs": "^1.11.19",
+    "lodash-es": "^4.17.23",
+    "pinia": "^3.0.4",
+    "posthog-js": "^1.386.6",
+    "vue": "^3.5.25",
+    "vue-router": "^5.0.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^24.10.1",
+    "@vitejs/plugin-vue": "^6.0.2",
+    "@vue/test-utils": "^2.4.6",
+    "@vue/tsconfig": "^0.8.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-vue": "^10.5.1",
+    "globals": "^16.4.0",
+    "jsdom": "^27.0.1",
+    "rollup-plugin-visualizer": "^7.0.1",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.1",
+    "unplugin-vue-components": "^31.0.0",
+    "vite": "^7.3.1",
+    "vitest": "^4.0.18",
+    "vue-tsc": "^3.1.5"
+  }
+}
